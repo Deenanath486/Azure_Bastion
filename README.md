@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Azure Bastion & PostgreSQL Flexible Server Architecture (Dev & Prod)
 ### Enterprise-Grade 3-Tier Multi-VM Architecture
 
@@ -110,3 +111,6 @@ terraform output -raw vm_admin_password
 # Database Password:
 terraform output -raw postgresql_admin_password
 ```
+=======
+# Azure_Bastion
+>>>>>>> origin/main
