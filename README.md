@@ -1,8 +1,12 @@
-<<<<<<< HEAD
 # Azure Bastion & PostgreSQL Flexible Server Architecture (Dev & Prod)
 ### Enterprise-Grade 3-Tier Multi-VM Architecture
 
-Child and Parent modular Terraform structure deploying **Devyani-RG**, **VNet** with:
+[![Terraform](https://img.shields.io/badge/Terraform-1.5+-623CE4?style=flat&logo=terraform&logoColor=white)](https://www.terraform.io/)
+[![Azure](https://img.shields.io/badge/Microsoft_Azure-0078D4?style=flat&logo=microsoft-azure&logoColor=white)](https://azure.microsoft.com/)
+[![Architecture](https://img.shields.io/badge/Architecture-3--Tier%20VNet-success?style=flat)](https://github.com/Deenanath486/Azure_Bastion)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+Child and Parent modular Terraform structure deploying **Resource Group**, **VNet** with:
 - **Frontend Subnet** + **Frontend Linux VM** (Nginx Web Server)
 - **Backend Subnet** + **Backend Linux VM** (Application Server + PostgreSQL Client)
 - **Database Subnet** + **PostgreSQL Flexible Server** (PaaS Service with Private DNS)
@@ -47,7 +51,7 @@ Child and Parent modular Terraform structure deploying **Devyani-RG**, **VNet** 
 ## 📁 Directory Structure
 
 ```text
-d:\Azure Bastion\
+.
 ├── .gitignore                             # Ignores local state, secrets, and caches
 ├── modules/                               # Reusable Child Modules
 │   ├── resource_group/                    # Azure Resource Group
@@ -76,7 +80,7 @@ d:\Azure Bastion\
 
 | Component | Dev Environment | Prod Environment |
 | :--- | :--- | :--- |
-| **Subscription ID** | `cc6eb6b0-ec2f-4e39-9a40-37a2b2ea1ba8` | `cc6eb6b0-ec2f-4e39-9a40-37a2b2ea1ba8` |
+| **Subscription ID** | `<your-azure-subscription-id>` | `<your-azure-subscription-id>` |
 | **VNet CIDR** | `10.10.0.0/16` | `10.20.0.0/16` |
 | **Frontend VM** | `Standard_B1s` (Standard_LRS) | `Standard_D2s_v3` (Premium_LRS) |
 | **Backend VM** | `Standard_B1s` (Standard_LRS) | `Standard_D2s_v3` (Premium_LRS) |
@@ -89,7 +93,7 @@ d:\Azure Bastion\
 
 ### 1. Dev Environment
 ```powershell
-cd "d:\Azure Bastion\environments\dev"
+cd environments/dev
 terraform init
 terraform validate
 terraform plan
@@ -97,7 +101,7 @@ terraform plan
 
 ### 2. Prod Environment
 ```powershell
-cd "d:\Azure Bastion\environments\prod"
+cd environments/prod
 terraform init
 terraform validate
 terraform plan
@@ -111,6 +115,3 @@ terraform output -raw vm_admin_password
 # Database Password:
 terraform output -raw postgresql_admin_password
 ```
-=======
-# Azure_Bastion
->>>>>>> origin/main
